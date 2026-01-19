@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log In to NRIBuzz</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="p-4 bg-white shadow-md flex justify-between">
+    <h1 class="text-xl font-bold text-blue-600">Log In to NRIBuzz</h1>
+    <div class="space-x-2">
+      <button onclick="showModal('login')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Login</button>
+      <button onclick="showModal('signup')" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Sign Up</button>
+    </div>
+  </nav>
+
+  <!-- Modals -->
+  <div id="modals">
+
+    <!-- Login Modal -->
+    <div id="login" class="hidden fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-blue-600">Login</h2>
+          <button onclick="hideModal('login')" class="text-gray-600 hover:text-red-600 text-2xl">&times;</button>
+        </div>
+        <form class="space-y-4" onsubmit="alert('Login info submitted'); return false;">
+          <input type="email" placeholder="Email" class="w-full p-3 border rounded" required>
+          <input type="password" placeholder="Password" class="w-full p-3 border rounded" required>
+          <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Login</button>
+        </form>
+        <p class="text-center mt-4 text-sm">
+          Don't have an account? 
+          <button onclick="switchModal('login','signup')" class="text-blue-600 underline">Sign Up</button>
+        </p>
+        <p class="text-center mt-2 text-sm">
+          <button onclick="switchModal('login','forgot')" class="text-red-500 hover:underline">Forgot Password?</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signup" class="hidden fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold text-blue-600">Sign Up</h2>
+          <button onclick="hideModal('signup')" class="text-gray-600 hover:text-red-600 text-2xl">&times;</button>
+        </div>
+        <form class="space-y-4" onsubmit="alert('Sign Up info submitted'); return false;">
+          <input type="text" placeholder="Full Name" class="w-full p-3 border rounded" required>
+          <input type="email" placeholder="Email" class="w-full p-3 border rounded" required>
+          <input type="password" placeholder="Password" class="w-full p-3 border rounded" required>
+          <select class="w-full p-3 border rounded" required>
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+          <button type="submit" class="w-full bg-green-600 text-white p-3 rounded hover:bg-green-700">Sign Up</button>
+        </form>
+        <p class="text-center mt-4 text-sm">
+          Already have an account? 
+          <button onclick="switchModal('signup','login')" class="text-blue-600 underline">Login</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot" class="hidden fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+      <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-2xl font-bold text-center mb-6 text-blue-600">Reset Password</h2>
+        <form class="space-y-4" onsubmit="alert('Reset link sent'); return false;">
+          <input type="email" placeholder="Enter Your Email" class="w-full p-3 border rounded" required>
+          <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700">Send Reset Link</button>
+        </form>
+        <p class="text-center mt-4 text-sm">
+          <button onclick="switchModal('forgot','login')" class="text-blue-600 underline">Back to Login</button>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    function showModal(id) { document.getElementById(id).classList.remove('hidden'); }
+    function hideModal(id) { document.getElementById(id).classList.add('hidden'); }
+    function switchModal(hideId, showId) { hideModal(hideId); showModal(showId); }
+  </script>
+
+</body>
+</html>

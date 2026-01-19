@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NRIBuzz - News for Indians Abroad</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <!-- <a class="navbar-brand fw-bold" href="#">NRIBuzz</a> -->
+    <a class="navbar-brand" href="#">NRIBuzz</a>
+
+    <p class="tagline"><span class="tagline-text">News that matters to Indians abroad</span></p>
+
+      
+    </span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero text-white text-center">
+  <div class="container">
+    <h1>Stay Connected to India, Wherever You Live</h1>
+    <p>Latest news, visas, business & community updates for NRIs</p>
+  </div>
+</div>
+
+<!-- NEWS SECTION -->
+<div class="container my-5">
+  <h3 class="mb-4">Top NRI Stories</h3>
+  <div class="row" id="newsContainer"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-light py-5">
+  <div class="container text-center">
+    <p class="mb-3">© 2026 NRIBuzz.com</p>
+    <small class="d-block mb-4">Built for NRIs worldwide</small>
+
+    <!-- Login / Sign Up Buttons -->
+    <div class="footer-buttons d-flex justify-content-center gap-3 flex-wrap">
+      <a href="./log.html" class="btn btn-outline-footer">Login</a>
+      <a href="./log.html" class="btn btn-footer">Sign Up</a>
+    </div>
+  </div>
+</footer>
+
+
+<script src="js/data.js"></script>
+<script>
+  const container = document.getElementById("newsContainer");
+
+  newsData.forEach(news => {
+    container.innerHTML += `
+      <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="${news.image}" class="card-img-top" alt="">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">${news.category}</span>
+            <h6>${news.title}</h6>
+            <p class="small text-muted">${news.summary}</p>
+            <a href="article.html" class="btn btn-sm btn-outline-primary">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+</script>
+
+<script>
+  // Wait for the typing animation to finish
+  const tagline = document.querySelector('.tagline');
+  const taglineText = document.querySelector('.tagline-text');
+
+  // Total typing duration should match CSS typing animation
+  const typingDuration = 3000; // 3s
+
+  setTimeout(() => {
+    // Remove cursor effect
+    taglineText.style.borderRight = 'none';
+
+    // Add highlight effect to tagline container
+    tagline.classList.add('highlight');
+  }, typingDuration);
+</script>
+
+
+</body>
+</html>

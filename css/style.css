@@ -1,0 +1,300 @@
+/* ---------- GLOBAL ---------- */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #f4f6f9;
+  color: #1f2937;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-brand {
+  color: #1d4ed8 !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar .navbar-text {
+  color: #6b7280 !important;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.96)),
+    url('https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1800&q=80')
+    center/cover;
+  padding: 100px 0;
+}
+
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 15px auto 0;
+  font-size: 1.15rem;
+  color: #374151;
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+.container h2,
+.container h3 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.container h2::after,
+.container h3::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #2563eb;
+  display: block;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  transition: all .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card img {
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.2rem;
+}
+
+.card-body h5,
+.card-body h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: .5rem;
+}
+
+.card-body p {
+  font-size: .9rem;
+  color: #6b7280;
+}
+
+/* ---------- BADGES ---------- */
+.badge {
+  font-size: .7rem;
+  padding: .35em .6em;
+  margin-bottom: .6rem;
+  background-color: #e0e7ff;
+  color: #f7f7f9;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn-outline-primary {
+  --bs-btn-color: #2563eb;
+  --bs-btn-border-color: #2563eb;
+  --bs-btn-hover-bg: #2563eb;
+  --bs-btn-hover-border-color: #2563eb;
+  --bs-btn-hover-color: #fff;
+  font-size: .8rem;
+  padding: .35rem .75rem;
+}
+
+/* ---------- FOOTER ---------- */
+/* Footer Buttons Container */
+.footer-buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Base Footer Button */
+footer .btn {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;           /* pill-shaped */
+  padding: 0.5rem 1.2rem;
+  transition: all 0.25s ease;
+}
+
+/* Login Button - outline style */
+.btn-outline-footer {
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  background-color: transparent;
+}
+
+.btn-outline-footer:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Sign Up Button - solid style */
+.btn-footer {
+  color: #ffffff;
+  background-color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btn-footer:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Responsive stacking on small screens */
+@media(max-width: 576px){
+  .footer-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-buttons .btn {
+    width: 100%;
+  }
+}
+
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+
+
+
+/* ---------- Tagline Modern Style ---------- */
+/* Existing tagline styles */
+.tagline {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #2563eb;
+  text-align: center;
+  max-width: 720px;
+  margin: 12px auto 0 auto;
+  line-height: 1.5;
+  position: relative;
+  letter-spacing: 0.3px;
+
+  /* Prepare for highlight box */
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Typewriter effect */
+.tagline-text {
+  border-right: 2px solid #2563eb;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  font-weight: 500;
+  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 50%, 100% { border-color: #2563eb; }
+  25%, 75% { border-color: transparent; }
+}
+
+/* Highlight effect after typing */
+.tagline.highlight {
+  background-color: rgba(37, 99, 235, 0.15);
+  border: 2px solid #2563eb;
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
+/* ---------- Brand / Logo ---------- */
+/* ---------- Brand / Logo ---------- */
+.navbar-brand {
+  font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #1d4ed8;
+  letter-spacing: 1px;
+  
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  /* Smooth transitions for all effects */
+  transition: all 0.4s ease;
+}
+
+/* Hover: scale + color + subtle glow */
+.navbar-brand:hover {
+  color: #2563eb;
+  transform: scale(1.1);
+  text-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Animated underline on hover */
+.navbar-brand::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #2563eb;
+  margin-top: 4px;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* Animate underline expanding on hover */
+.navbar-brand:hover::after {
+  width: 100%;
+}
+
+/* Optional: slight bounce on page load */
+@keyframes logoBounce {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.navbar-brand {
+  animation: logoBounce 0.8s ease-out forwards;
+}
